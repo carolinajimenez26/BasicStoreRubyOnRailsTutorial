@@ -34,5 +34,4 @@ Rails.application.routes.draw do
 
   # Unsuscribing users
   resource :unsubscribe, only: [ :show ]
-
 end
