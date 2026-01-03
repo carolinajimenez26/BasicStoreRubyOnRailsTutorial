@@ -1,0 +1,48 @@
+<h1><%= t ".title" %></h1>
+
+<h2>Products</h2>
+
+<% if authenticated? %>
+  <h3> Create new product </h3>
+  <%= link_to "New product", new_product_path %>
+<% end %>
+
+<h3><%= t "List all products" %></h3>
+<div id="products">
+  <hr>
+  <h3>V1</h3>
+  <% @products.each do |product| %>
+    <div>
+      <%= product.name %>
+    </div>
+  <% end %>
+  
+  <hr>
+  <h3>V2</h3>
+  <% @products.each do |product| %>  
+    <div>
+      <a href="/products/<%= product.id %>">
+        <%= product.name %>
+      </a>
+    </div>
+  <% end %>
+
+  <hr>
+  <h3>V3</h3>
+  <% @products.each do |product| %>
+    <div>
+      <%= product_path(product.id) %>
+      <%= link_to product.name, product_path(product.id) %>
+    </div>
+  <% end %>
+
+  <hr>
+  <h3>V4</h3>
+  <% @products.each do |product| %>
+    <div>
+      <%= product_url(product.id) %>
+      <%= link_to product.name, product_url(product.id) %>
+    </div>
+  <% end %>
+
+</div>
