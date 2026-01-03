@@ -33,5 +33,8 @@
     <main>
       <%= yield %>
     </main>
+
+    <div class="notice"><%= flash[:notice] %></div>
+    <div class="alert"><%= flash[:alert] %></div>
   </body>
 </html>

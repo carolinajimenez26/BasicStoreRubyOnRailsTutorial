@@ -25,5 +25,11 @@ Rails.application.routes.draw do
   # put "/products/:id", to: "products#update" # helper prefix is "product"
   # delete "/products/:id", to: "products#destroy" # helper prefix is "product"
   ## All the above is the same as doing:
-  resources :products
+  # resources :products
+
+  # Adding subscribers to products
+  resources :products do
+    resources :subscribers, only: [ :create ]
+  end
+
 end
